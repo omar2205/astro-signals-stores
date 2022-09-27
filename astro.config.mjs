@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config'
 import svelte from '@astrojs/svelte'
 import preact from '@astrojs/preact'
 
+import netlify from '@astrojs/netlify/edge-functions'
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -10,4 +12,6 @@ export default defineConfig({
       compat: true,
     }),
   ],
+  output: 'server',
+  adapter: netlify(),
 })
