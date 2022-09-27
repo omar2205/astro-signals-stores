@@ -1,0 +1,43 @@
+---
+import Header from '../components/Header.svelte'
+import SvelteLand from '../components/SvelteLand.svelte'
+import PreactLand from '../components/PreactLand'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+		<style is:global>
+			:root {
+				--el-width: 18rem;
+			}
+			body {
+				font-family: Helvetica, sans-serif;
+				width: min(450px, 90vw);
+				margin: 0 auto;
+				background-color: #fafafa;
+			}
+			h1, h2, h3 {
+				font-family: 'Futura Now Headline', Helvetica, sans-serif
+			}
+			.el {
+				margin: 1rem;
+				width: var(--el-width);
+  			padding: .1rem 1rem 1rem;
+				border-radius: .4rem;
+				outline-style: dashed !important;
+				background-color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<Header client:idle/>
+		<SvelteLand client:load />
+		<PreactLand client:load />
+		<!-- <Pr client:only="preact" /> -->
+	</body>
+</html>
